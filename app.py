@@ -62,4 +62,4 @@ tab3.write("Establishing local monitoring teams to track girls returning to scho
 
 # 7. Sources and Footer
 st.markdown("---")
-st.caption("Data Sources: Ghana Health Service (DHIMS-II), UNFPA Ghana, and recent Adolescent Health studies (2026).")pip freeze > requirements.txt
+st.caption("Data Sources: Ghana Health Service (DHIMS-II), UNFPA Ghana, and recent Adolescent Health studies (2026).")

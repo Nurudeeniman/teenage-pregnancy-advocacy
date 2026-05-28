@@ -1,7 +1,16 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+# Sidebar Navigation
+st.sidebar.title("Navigation")
+page = st.sidebar.radio("Go to:", ["Crisis Overview", "Regional Data (5 Regions)", "Action & Re-entry"])
 
+st.sidebar.markdown("---")
+st.sidebar.header("Focus Area")
+st.sidebar.write("Focus: Eliminating Teenage Pregnancy")
+
+st.sidebar.markdown("---")
+st.sidebar.info("Advocacy Hub - 2026 Edition")
 # 1. Page Configuration
 st.set_page_config(page_title="Teenage Pregnancy Advocacy Hub", layout="wide")
 

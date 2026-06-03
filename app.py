@@ -1,20 +1,35 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from streamlit_google_auth import Authenticate
 
-# Dashboard Configuration
+# 1. Page Configuration (Set it ONLY ONCE at the top)
 st.set_page_config(page_title="Teenage Pregnancy Advocacy Hub", layout="wide")
 
-# Sidebar for Navigation
+# 2. Authentication Setup
+authenticator = Authenticate(
+    client_id=st.secrets["oauth"]["client_id"],
+    client_secret=st.secrets["oauth"]["client_secret"],
+    redirect_uri='https://teenage-pregnancy-advocacy-kbj73muumtfyauoaytwcae.streamlit.app/',
+    cookie_name='my_cookie',
+    cookie_key='this_is_secret'
+)
+
+# 3. Force Login
+authenticator.check_authentification()
+
+if not st.session_state.get('connected', False):
+    authenticator.login()
+    st.stop() 
+
+# 4. DASHBOARD CONTENT
 st.sidebar.header("Advocacy Navigation")
 page = st.sidebar.radio("Go to:", ["Crisis Overview", "Regional Data (5 Regions)", "Action & Re-entry", "Prevention & Awareness"])
 
-# Sidebar Footer
 st.sidebar.markdown("---")
 st.sidebar.write("Focus: Eliminating Teenage Pregnancy")
 st.sidebar.info("Advocacy Hub - 2026 Edition")
 
-# --- Page Logic ---
 if page == "Crisis Overview":
     st.title("🛡️ Advocacy Hub: Addressing Teenage Pregnancy")
     st.subheader("Mission: Data-Driven Action to Reduce Teenage Pregnancy in Northern Ghana")

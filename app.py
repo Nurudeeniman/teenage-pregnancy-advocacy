@@ -7,7 +7,7 @@ st.set_page_config(page_title="Teenage Pregnancy Advocacy Hub", layout="wide")
 
 # Sidebar for Navigation
 st.sidebar.header("Advocacy Navigation")
-page = st.sidebar.radio("Go to:", ["Crisis Overview", "Regional Data (5 Regions)", "Action & Re-entry"])
+page = st.sidebar.radio("Go to:", ["Crisis Overview", "Regional Data (5 Regions)", "Action & Re-entry", "Prevention & Awareness"])
 
 # Sidebar Footer
 st.sidebar.markdown("---")
@@ -51,3 +51,34 @@ elif page == "Action & Re-entry":
     st.table(roadmap)
     st.subheader("Your Call to Action")
     st.success("By using this dashboard, we pressure local stakeholders to move beyond talk and enforce the policy that allows girls back into the classroom.")
+    elif page == "Prevention & Awareness":
+    st.title("💡 Prevention & Awareness")
+    
+    st.write("### Real-Life Scenarios")
+    
+    st.subheader("Scenario 1: The Pressure to Stay in School")
+    st.write("""
+    Aminata, a 15-year-old in Bimbila, is told by a suitor that marriage will provide 
+    financial security for her family. Her teachers and community leaders intervene, 
+    not just by talking, but by showing her parents a path to a scholarship that 
+    keeps her in the classroom. **Prevention is providing an alternative path 
+    before the pressure becomes a choice.**
+    """)
+    
+    st.subheader("Scenario 2: Breaking the Silence")
+    st.write("""
+    A young girl in the community stops attending school. Instead of assuming she 
+    is just 'bored,' a local volunteer visits her home, discovers she is facing 
+    early pregnancy, and helps her navigate the process of keeping her education 
+    alive through the re-entry policy. **Awareness is recognizing the signs 
+    of dropout before the girl is lost to the system.**
+    """)
+    
+    st.subheader("Scenario 3: Community-Led Advocacy")
+    st.write("""
+    A village chief, recognizing the high rate of dropouts in his area, publicly 
+    declares that girls' education is a priority. He meets with local radio stations 
+    to talk about the importance of reproductive health. When a community leader 
+    speaks up, the stigma decreases, and families feel safer seeking help. 
+    **Prevention is community-wide support that makes it easier to stay in school.**
+    """)

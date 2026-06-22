@@ -4,25 +4,27 @@ import plotly.express as px
 
 st.set_page_config(page_title="Teenage Pregnancy Advocacy Hub", layout="wide")
 
+st.markdown("""
+<style>
+.main-header { font-size: 40px; color: #2E86C1; text-align: center; font-weight: bold; margin-bottom: 20px; }
+.card { background-color: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px; }
+.footer { text-align: center; font-size: 12px; color: #777; margin-top: 50px; border-top: 1px solid #eee; padding-top: 10px; }
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown('<div class="main-header">Advocacy Hub: Northern Ghana</div>', unsafe_allow_html=True)
+
 st.sidebar.header("Advocacy Navigation")
 page = st.sidebar.radio("Go to:", ["Crisis Overview", "Regional Data (5 Regions)", "Action & Re-entry", "Prevention & Awareness"])
-
-st.sidebar.markdown("---")
-st.sidebar.write("Focus: Eliminating Teenage Pregnancy")
-st.sidebar.info("Advocacy Hub - 2026 Edition")
 
 if page == "Crisis Overview":
     st.title("🛡️ Advocacy Hub: Addressing Teenage Pregnancy")
     st.subheader("Mission: Data-Driven Action to Reduce Teenage Pregnancy in Northern Ghana")
-    st.write("### The Reality")
-    st.markdown("""
-    Teenage pregnancy is the primary driver of school dropout for adolescent girls in our communities. 
-    It is a multi-dimensional crisis:
-    * **Health Risk:** Early pregnancy leads to higher maternal mortality risks.
-    * **Educational Impact:** A cycle of premature school exit for thousands of girls.
-    * **Economic Trap:** Lack of skills limits lifetime earning potential for young mothers.
-    """)
+    
+    st.markdown('<div class="card"><strong>The Reality:</strong> Teenage pregnancy is the primary driver of school dropout for adolescent girls in our communities. It is a multi-dimensional crisis:<ul><li><strong>Health Risk:</strong> Early pregnancy leads to higher maternal mortality risks.</li><li><strong>Educational Impact:</strong> A cycle of premature school exit for thousands of girls.</li><li><strong>Economic Trap:</strong> Lack of skills limits lifetime earning potential for young mothers.</li></ul></div>', unsafe_allow_html=True)
+    
     st.info("Our Goal: To reduce the rate of teenage pregnancy and ensure 100% re-entry for those who become pregnant.")
+    st.image("https://images.unsplash.com/photo-1523240795612-9a054b0db644", caption="Advocating for a brighter future through education.")
 
 elif page == "Regional Data (5 Regions)":
     st.title("Regional Data Dashboard")
@@ -55,3 +57,6 @@ elif page == "Prevention & Awareness":
     st.write("Aminata, a 15-year-old in Bimbila, is told by a suitor that marriage will provide financial security for her family. Her teachers and community leaders intervene by showing her parents a path to a scholarship that keeps her in the classroom.")
     st.subheader("Scenario 2: Breaking the Silence")
     st.write("A young girl in the community stops attending school. Instead of assuming she is just 'bored,' a local volunteer visits her home, discovers she is facing early pregnancy, and helps her navigate the process of keeping her education alive through the re-entry policy.")
+    st.image("https://images.unsplash.com/photo-1497633762265-9d176839352e", caption="Support and guidance change lives.")
+
+st.markdown('<div class="footer">© 2026 Teenage Pregnancy Advocacy Initiative | Empowering Education in Northern Region</div>', unsafe_allow_html=True)

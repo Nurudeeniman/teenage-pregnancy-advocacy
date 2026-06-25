@@ -1,26 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import os
 
 st.set_page_config(page_title="Teenage Pregnancy Advocacy Hub", layout="wide")
-
-if 'gate_passed' not in st.session_state:
-    st.session_state.gate_passed = False
-
-if not st.session_state.gate_passed:
-    st.title("Welcome to the Advocacy Hub")
-    
-    if os.path.exists("switch.jpeg"):
-        st.image("switch.jpeg")
-    else:
-        st.write("--- Image switch.jpeg not found in repository ---")
-        
-    toggle = st.toggle("Enable Access to Dashboard")
-    if toggle:
-        st.session_state.gate_passed = True
-        st.rerun()
-    st.stop()
 
 st.markdown("""
 <style>
